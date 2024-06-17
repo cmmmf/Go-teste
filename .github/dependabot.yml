@@ -1,7 +1,0 @@
-version: 2
-updates:
-  - package-ecosystem: "gomod" # or another package manager
-    directory: "/" # Location of package files
-    schedule:
-      interval: "daily"
-    target-branch: "dependabot" # Target your new branch here
