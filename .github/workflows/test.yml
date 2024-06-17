@@ -3,7 +3,7 @@ name: CI for Dependabot
 on:
   pull_request:
     branches:
-      - dependabot-testing4
+      - dependabot
     paths:
       - 'go.mod'
 
