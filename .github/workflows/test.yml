@@ -13,9 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
-
       - name: Checkout code
         uses: actions/checkout@v2
 
