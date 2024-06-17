@@ -1,11 +1,12 @@
 name: CI for Dependabot
 
 on:
+  push:
+    branches:
+      - dependabot  # Your target branch
   pull_request:
     branches:
-      - dependabot
-    paths:
-      - 'go.mod'
+      - dependabot  # Your target branch
 
 jobs:
   test:
