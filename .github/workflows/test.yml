@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - dependabot  # Your target branch
-  pull_request:
-    branches:
-      - dependabot  # Your target branch
 
 jobs:
   test:
