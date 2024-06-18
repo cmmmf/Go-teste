@@ -4,4 +4,4 @@ updates:
     directory: "/" # Location of package files
     schedule:
       interval: "daily"
-    target-branch: "dependabot" # Target your new branch here
+    target-branch: "main" # Target your new branch here

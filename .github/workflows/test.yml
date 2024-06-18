@@ -1,20 +1,21 @@
-name: CI for Dependabot
+name: Make sure new PRs are sent to development
 
 on:
-  push:
-    branches:
-      - dependabot  # Your target branch
+  pull_request_target:
+    types: [opened, edited]
 
 jobs:
-  test:
+  check-branch:
     runs-on: ubuntu-latest
-
+    permissions:
+      pull-requests: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: go mod tidy
-
-      - name: Run tests
-        run: go test ./...
+      # Do not checkout the repository here. See https://securitylab.github.com/research/github-actions-preventing-pwn-requests/ for more information
+      - uses: Vankka/pr-target-branch-action@v3
+        with:
+          target: main
+          exclude: development # Don't prevent going from development -> main
+          change-to: development
+          comment: |
+              Your PR's base branch was set to `main`, PRs should be set to target `development`.
+              The base branch of this PR has been automatically changed to `development`, please check that there are no merge conflicts
